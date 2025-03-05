@@ -78,10 +78,10 @@ class UserController extends Controller
                 'data' => $user
             ], 200);
 
-        } catch(\Throwable $th) {
+        } catch(\Throwable $e) {
             return response()->json([
                 'status' => false,
-                'message' => $th->getMessage()
+                'message' => $e->getMessage()
             ], 500);
         }
     }
