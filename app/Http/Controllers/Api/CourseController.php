@@ -46,7 +46,7 @@ class CourseController extends Controller
         } catch (\Throwable $e) {
             return response()->json(
                 [
-                    'code' => 200,
+                    'code' => 500,
                     'msg' => 'Server internal error',
                     'data' => $e->getMessage()
                 ], 500
