@@ -26,7 +26,6 @@ class Lesson extends Model
             foreach($resultVideo as $k=>$v) {
                 $resultVideo[$k]['url']=$v['url'];
                 $resultVideo[$k]['thumbnail']=$v['thumbnail'];
-
             }
         }
 

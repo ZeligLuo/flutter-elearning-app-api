@@ -35,5 +35,32 @@ class LessonController extends Controller
                 ], 500
             );
         }
+    }
+
+    public function lessonDetail(Request $request) {
+        $id = $request->id;
+        try {
+            $result = Lesson::where('id', '=', $id)->select(
+                'name',
+                'description',
+                'thumbnail',
+                'video')->get();
+
+            return response()->json(
+                [
+                    'code' => 200,
+                    'msg' => 'Lesson detail here',
+                    'data' => $result
+                ], 200
+            );
+        } catch (\Throwable $e) {
+            return response()->json(
+                [
+                    'code' => 500,
+                    'msg' => 'Server internal error',
+                    'data' => $e->getMessage()
+                ], 500
+            );
+        }
     } 
 }

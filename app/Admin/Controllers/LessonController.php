@@ -82,7 +82,7 @@ class LessonController extends AdminController
         $form->table('video', function($form){
             $form->text('name')->rules('required');
             $form->image('thumbnail')->uniqueName()->rules('required');
-            $form->file('url')->rules('required');
+            $form->file('url')->uniqueName()->rules('required');
         });
 
         $form->display('created_at', __('Created at'));
