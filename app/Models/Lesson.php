@@ -16,6 +16,7 @@ class Lesson extends Model
     ];
 
     public function setVideoAttribute($value) {
+        // $this->attributes['video'] = json_encode($value);
         $this->attributes['video'] = json_encode(array_values($value));
     }
 
